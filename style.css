@@ -1,0 +1,300 @@
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Cormorant Garamond', serif;
+  background:#000;
+  color:#333;
+}
+
+.video-fondo{
+  position:fixed;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:100%;
+  max-width:430px;
+  height:100vh;
+  object-fit:cover;
+  object-position:center;
+  z-index:-3;
+}
+
+.capa-oscura{
+  position:fixed;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:100%;
+  max-width:430px;
+  height:100vh;
+  background:rgba(0,0,0,.48);
+  z-index:-2;
+}
+
+main{
+  max-width:430px;
+  margin:auto;
+}
+
+section{
+  min-height:100vh;
+  padding:55px 22px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.portada{color:white}
+
+.portada h2{
+  font-size:25px;
+  letter-spacing:4px;
+}
+
+.portada h1,.final h1{
+  font-size:58px;
+  line-height:1;
+  font-weight:700;
+}
+
+.portada span,.final span{
+  background:#bfa36a;
+  color:white;
+  border-radius:50%;
+  padding:0 12px;
+  font-size:38px;
+}
+
+.portada p{
+  font-size:30px;
+  margin-top:18px;
+}
+
+.versiculo{
+  margin-top:25px;
+  font-size:20px;
+  line-height:1.4;
+}
+
+.blanco{
+  background:#fff;
+  position:relative;
+}
+
+.bloque h3,.card h3{
+  font-size:42px;
+  color:#bfa36a;
+  margin-bottom:20px;
+}
+
+.contador{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:5px;
+  width:100%;
+}
+
+.contador div{
+  border-right:1px solid #bfa36a;
+}
+
+.contador div:last-child{border-right:none}
+
+.contador strong{
+  display:block;
+  font-size:38px;
+}
+
+.contador span{
+  color:#bfa36a;
+  font-size:18px;
+}
+
+.corazon{
+  color:#bfa36a;
+  font-size:38px;
+  margin-top:35px;
+}
+
+.card{
+  min-height:auto;
+  margin:70px 14px;
+  padding:60px 24px;
+  background:#fff;
+  border-radius:24px;
+  box-shadow:0 8px 30px rgba(0,0,0,.25);
+}
+
+.icono{
+  font-size:54px;
+  margin:18px 0;
+}
+
+.fecha-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  align-items:center;
+  gap:10px;
+  width:100%;
+  margin:20px 0;
+}
+
+.fecha-grid span{
+  border-top:1px solid #999;
+  border-bottom:1px solid #999;
+  padding:10px 0;
+  color:#bfa36a;
+  text-transform:uppercase;
+  font-weight:bold;
+}
+
+.fecha-grid strong{
+  font-size:72px;
+  color:#bfa36a;
+}
+
+.card h4{
+  font-size:25px;
+  margin:20px 0;
+}
+
+.card p{
+  font-size:21px;
+  line-height:1.4;
+}
+
+.card a,.card button,.modal button{
+  background:#bfa36a;
+  color:white;
+  border:none;
+  padding:15px 35px;
+  border-radius:10px;
+  font-size:20px;
+  font-family:inherit;
+  text-decoration:none;
+  margin-top:22px;
+  cursor:pointer;
+}
+
+.galeria{
+  display:flex;
+  overflow-x:auto;
+  gap:18px;
+  width:100%;
+  padding:30px 0;
+}
+
+.galeria img{
+  min-width:340px;
+  height:500px;
+  object-fit:cover;
+  border:10px solid white;
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+
+.nota-rojo{
+  margin-top:18px;
+  color:#7a3b3b;
+  font-size:20px;
+}
+
+.nota-novia{
+  margin-top:14px;
+  color:#bfa36a;
+  font-size:21px;
+  font-weight:bold;
+}
+
+.limite{
+  margin-top:20px;
+  color:#777;
+}
+
+.final{
+  background:white;
+  color:#bfa36a;
+}
+
+.final p{
+  font-size:34px;
+  margin-top:20px;
+}
+
+.btn-musica{
+  position:fixed;
+  bottom:18px;
+  right:18px;
+  z-index:40;
+  background:#bfa36a;
+  color:white;
+  border:none;
+  padding:12px 18px;
+  border-radius:30px;
+  font-family:inherit;
+  font-size:16px;
+  box-shadow:0 5px 18px rgba(0,0,0,.3);
+}
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(255,255,255,.85);
+  z-index:60;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal-contenido{
+  background:white;
+  width:100%;
+  max-width:390px;
+  border:1px solid #bfa36a;
+  border-radius:22px;
+  padding:38px 25px;
+  text-align:center;
+  position:relative;
+}
+
+.modal-contenido span{
+  position:absolute;
+  right:20px;
+  top:10px;
+  font-size:34px;
+  cursor:pointer;
+  color:#bfa36a;
+}
+
+.modal-contenido h3{
+  color:#bfa36a;
+  font-size:40px;
+  margin-bottom:22px;
+}
+
+.modal-contenido p{
+  font-size:20px;
+  margin:14px 0;
+  line-height:1.4;
+}
+
+.modal input,.modal textarea,.modal select{
+  width:100%;
+  border:none;
+  border-bottom:1px solid #bfa36a;
+  margin:12px 0;
+  padding:12px;
+  font-size:18px;
+  font-family:inherit;
+  background:white;
+}
+
+.modal textarea{height:90px}
+
+.mensaje{
+  margin-top:15px;
+  color:#bfa36a;
+  font-weight:bold;
+}

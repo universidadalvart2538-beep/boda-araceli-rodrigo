@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Araceli & Rodrigo</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<video class="video-fondo" autoplay muted loop playsinline>
+  <source src="video/bodavideo.mp4" type="video/mp4">
+</video>
+
+<div class="capa-oscura"></div>
+
+<audio id="musica" loop>
+  <source src="audio/cancionboda.mpeg" type="audio/mpeg">
+</audio>
+
+<button class="btn-musica" onclick="controlarMusica()">🎵 Música</button>
+
+<main>
+
+  <section class="portada">
+    <h2>19.11.2026</h2>
+    <h1>Araceli <span>&</span> Rodrigo</h1>
+    <p>¡Nuestra Boda!</p>
+    <div class="versiculo">
+      <p>19/Nov/26 🤍</p>
+      <p><b>Colosenses 3:14</b></p>
+      <p>Por encima de todo, vístanse de amor, que es el vínculo perfecto ✨</p>
+    </div>
+  </section>
+
+  <section class="bloque blanco">
+    <h3>Faltan</h3>
+    <div class="contador" id="contador"></div>
+    <div class="corazon">♥</div>
+  </section>
+
+  <section class="card">
+    <h3>Ceremonia</h3>
+    <div class="icono">💍</div>
+    <div class="fecha-grid">
+      <span>Jueves</span>
+      <strong>19</strong>
+      <span>05:00 PM</span>
+    </div>
+    <p>Noviembre 2026</p>
+    <h4>Hotel Posada Señorial</h4>
+    <p>Salón Aquiahuac, Av. 5 de Mayo 1400, San Andrés Cholula, Pue.</p>
+    <a href="https://maps.app.goo.gl/VpUHSVrkjfJ6UAV46" target="_blank">¿Cómo llegar?</a>
+  </section>
+
+  <section class="bloque blanco">
+    <h3>Retratos de nuestro amor</h3>
+    <p>La clave es disfrutar cada momento</p>
+    <div class="galeria">
+      <img src="img/nosotros1.jpeg">
+      <img src="img/nosotros2.jpeg">
+      <img src="img/nosotros3.jpeg">
+      <img src="img/nosotros4.jpeg">
+      <img src="img/salon.jpeg">
+      <img src="img/salon1.jpeg">
+    </div>
+  </section>
+
+  <section class="card">
+    <h3>Dress Code</h3>
+    <div class="icono">🎀</div>
+    <p>Casual formal para hombres y mujeres.</p>
+    <p class="nota-rojo">Con mucho cariño les pedimos evitar el uso de prendas en color rojo.</p>
+    <p class="nota-novia">El color blanco queda reservado exclusivamente para la novia.</p>
+    <button onclick="abrirModal('modalDress')">Ver más</button>
+  </section>
+
+  <section class="card">
+    <h3>Música</h3>
+    <div class="icono">🎵</div>
+    <p>¿Cuál es la canción que no puede faltar en la fiesta?</p>
+    <button onclick="abrirModal('modalMusica')">Sugerir canción</button>
+  </section>
+
+  <section class="card">
+    <h3>Regalos</h3>
+    <div class="icono">🎁</div>
+    <p>Si quieres darnos algo más que tu hermosa presencia...</p>
+    <button onclick="abrirModal('modalRegalos')">Ver más</button>
+  </section>
+
+  <section class="card">
+    <h3>Confirmación</h3>
+    <p>¿Nos acompañas en este día tan especial?</p>
+    <div class="icono">✅</div>
+    <button onclick="abrirModal('modalConfirmar')">Confirmar asistencia</button>
+    <p class="limite">Fecha límite: 1 de octubre</p>
+  </section>
+
+  <section class="final">
+    <h1>Araceli <span>&</span> Rodrigo</h1>
+    <p>¡Los esperamos!</p>
+  </section>
+
+</main>
+
+<div class="modal" id="modalConfirmar">
+  <form class="modal-contenido" onsubmit="enviarAsistencia(event)">
+    <span onclick="cerrarModal('modalConfirmar')">×</span>
+    <h3>¿Asistes a la celebración?</h3>
+
+    <select id="asiste" required>
+      <option value="">Selecciona una opción</option>
+      <option value="Sí confirmo">Sí confirmo</option>
+      <option value="No puedo asistir">No puedo asistir</option>
+    </select>
+
+    <input id="nombreAsistencia" placeholder="Nombre completo" required>
+    <input id="acompanantes" placeholder="Número de acompañantes">
+    <textarea id="comentarios" placeholder="Información importante: alergias, vegetariano, etc."></textarea>
+
+    <button type="submit">Enviar</button>
+    <p id="mensajeAsistencia" class="mensaje"></p>
+  </form>
+</div>
+
+<div class="modal" id="modalMusica">
+  <form class="modal-contenido" onsubmit="enviarCancion(event)">
+    <span onclick="cerrarModal('modalMusica')">×</span>
+    <h3>Sugerir Canción</h3>
+
+    <input id="nombreCancion" placeholder="Tu nombre" required>
+    <input id="cancion" placeholder="Nombre de la canción" required>
+    <input id="artista" placeholder="Artista o grupo">
+    <input id="linkCancion" placeholder="Link de YouTube o Spotify">
+
+    <button type="submit">Enviar</button>
+    <p id="mensajeCancion" class="mensaje"></p>
+  </form>
+</div>
+
+<div class="modal" id="modalDress">
+  <div class="modal-contenido">
+    <span onclick="cerrarModal('modalDress')">×</span>
+    <h3>Dress Code</h3>
+    <p><b>Casual formal</b></p>
+    <p><b>Hombres:</b> camisa, pantalón de vestir o casual formal, blazer opcional y zapatos formales.</p>
+    <p><b>Mujeres:</b> vestido, falda, conjunto elegante o pantalón formal.</p>
+    <p class="nota-rojo">Evitar prendas en color rojo.</p>
+    <p class="nota-novia">El blanco queda reservado exclusivamente para la novia.</p>
+  </div>
+</div>
+
+<div class="modal" id="modalRegalos">
+  <div class="modal-contenido">
+    <span onclick="cerrarModal('modalRegalos')">×</span>
+    <h3>Regalos</h3>
+    <p>Para quienes deseen hacernos un regalo en efectivo, tendremos sobres disponibles el día del evento.</p>
+    <p><b>Depósito bancario:</b><br>Cuenta: XXXX XXXX XXXX XXXX</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
